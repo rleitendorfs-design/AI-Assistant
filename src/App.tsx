@@ -1,5 +1,6 @@
 import AppShell from '@/components/layout/AppShell';
 import AccountingPage from '@/pages/AccountingPage';
+import AccountPage from '@/pages/AccountPage';
 import BookingsPage from '@/pages/BookingsPage';
 import TripAssistantPage from '@/pages/TripAssistantPage';
 import BillingPage from '@/pages/BillingPage';
@@ -34,6 +35,8 @@ function renderRoute(route: string) {
       return <BookingsPage />;
     case '/trip-assistant':
       return <TripAssistantPage />;
+    case '/account':
+      return <AccountPage />;
     default:
       return <DashboardPage />;
   }
@@ -58,3 +61,4 @@ function App() {
 }
 
 export default App;
+

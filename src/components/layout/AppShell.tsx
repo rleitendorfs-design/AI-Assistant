@@ -4,6 +4,7 @@ import {
   CalendarDays,
   CreditCard,
   Feather,
+  KeyRound,
   LayoutDashboard,
   LogOut,
   Mail,
@@ -42,6 +43,7 @@ const WORKSPACE_NAV: NavItem[] = [
   { label: 'Expenses', path: '/expenses', icon: Receipt },
   { label: 'Contacts', path: '/contacts', icon: Users },
   { label: 'Accounting', path: '/accounting', icon: Wallet },
+  { label: 'Account', path: '/account', icon: KeyRound },
 ];
 
 function hrefFor(path: string) {
@@ -112,7 +114,7 @@ function Sidebar({ route, theme, onToggleTheme, onNavigate }: SidebarProps) {
           type="button"
           onClick={onToggleTheme}
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          className="flex w-full items-center justify-between rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-emerald-600 hover:text-emerald-800"
+          className="flex w-full items-center justify-between rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-emerald-600 hover:text-emerald-700"
         >
           <span>{theme === 'dark' ? 'Dark mode' : 'Light mode'}</span>
           {theme === 'dark' ? (
@@ -136,7 +138,7 @@ function Sidebar({ route, theme, onToggleTheme, onNavigate }: SidebarProps) {
           type="button"
           onClick={handleSignOut}
           disabled={signingOut}
-          className="flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-300 px-3 py-2 text-sm font-medium text-neutral-800 transition-colors hover:border-emerald-600 hover:text-emerald-800 disabled:opacity-60"
+          className="flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-300 px-3 py-2 text-sm font-medium text-neutral-800 transition-colors hover:border-emerald-600 hover:text-emerald-700 disabled:cursor-not-allowed disabled:opacity-70"
         >
           <LogOut className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
           {signingOut ? 'Logging out...' : 'Log out'}
@@ -217,3 +219,4 @@ export default function AppShell({ children, theme, onToggleTheme }: AppShellPro
     </div>
   );
 }
+
